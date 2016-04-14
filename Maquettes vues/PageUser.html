@@ -16,13 +16,51 @@
 
     <!-- Custom CSS -->
     <link href="bootstrap/css/1-col-portfolio.css" rel="stylesheet">
+    <script src="bootstrap/js/jquery.js"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!-- Datatable -->
+    <link rel="stylesheet" type="text/css" href="./datatables/dataTables.css">
+    <script type="text/javascript" charset="utf8" src="./datatables/dataTables.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        $(document).ready(function(){
+            $('#table_rang').DataTable({
+                searching: false
+            });
+        });
+
+        function changePage(idPage) {
+            switch(idPage) {
+                case 'match':
+                    $('#match').show();
+                    $('#bet').hide();
+                    $('#rang').hide();
+                    break;
+                case 'bet':
+                    $('#match').hide();
+                    $('#bet').show();
+                    $('#rang').hide();
+                    break;
+                case 'rang':
+                    $('#match').hide();
+                    $('#bet').hide();
+                    $('#rang').show();
+                    break;
+                default:
+                    break;
+            } 
+        }
+    </script>
 
 </head>
 
@@ -44,16 +82,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Les matchs à venir</a>
+                        <a href="#" onclick="changePage('match')">Les matchs à venir</a>
                     </li>
                     <li>
-                        <a href="#">Mes paris</a>
+                        <a href="#" onclick="changePage('bet')">Mes paris</a>
                     </li>
                     <li>
-                        <a href="#">Mon classement</a>
+                        <a href="#" onclick="changePage('rang')">Mon classement</a>
                     </li>
 					<li>
-						<a href="#">Administration</a>
+						<a href="./PageAdmin.html">Administration</a>
 					</li>
                 </ul>
             </div>
@@ -65,218 +103,197 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Les matchs à venir
-                    <small>Tentez votre chance!</small>
-                </h1>
+        <div id="match">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Les matchs à venir
+                        <small>Tentez votre chance!</small>
+                    </h1>
+                </div>
             </div>
+            <!-- /.row -->
+
+            <!-- Project One -->
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-responsive" src="http://i.eurosport.com/2014/07/03/1271822-27428140-2560-1440.jpg?w=1050" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>France - Allemagne</h3>
+                    <h4>17/04/2016 - 20h50</h4>
+                    <p>Descriptif du match</p>
+                    <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Project Two -->
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-responsive" src="http://theoriginalwinger.com/wp-content/uploads/2012/06/portugal-v-spain-euro-20121.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>Espagne - Portugal</h3>
+                    <h4>20/04/2016 - 21h05</h4>
+                    <p>Descriptif du match</p>
+                    <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <hr>
+
+            <!-- Project Three -->
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-responsive" src="http://passions-fictions.com/wp-content/uploads/2014/09/FranceEspagne.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>France - Espagne</h3>
+                    <h4>23/04/2016</h4>
+                    <p>Descriptif du match</p>
+                    <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
 
-        <!-- Project One -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://i.eurosport.com/2014/07/03/1271822-27428140-2560-1440.jpg?w=1050" alt="">
-                </a>
+		
+		<div id="bet" style="display: none;">
+            <!-- page list des paris -->
+                
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Mes paris
+                        <small>paris effectués</small>
+                    </h1>
+                </div>
             </div>
-            <div class="col-md-5">
-                <h3>France - Allemagne</h3>
-                <h4>17/04/2016 - 20h50</h4>
-                <p>Descriptif du match</p>
-                <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
+            <!-- /.row -->
+            
+            <!-- rappel du match parié-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>France - Allemagne</h2>
+                </div>
             </div>
+            <!-- row -->
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Pari effectué</h3>
+                    <h4 style="bold">Vainqueur : France</h4>
+                    <p style="bold">Score : 2 - 0</p>
+                    <p>Points obtenus : X points</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Résultats</h3>
+                    <h4 style="bold">Vainqueur : France</h4>
+                    <p style="bold">Score : 4 - 1</p>
+                </div>
+            </div></br>
+        
+            <!-- rappel du match parié-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>France - Espagne</h2>
+                </div>
+            </div>
+            <!-- row -->
+                
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Pari effectué</h3>
+                    <h4 style="bold">Vainqueur : France</h4>
+                    <p style="bold">Score : 3 - 1</p>
+                    <p>Points obtenus : -</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Résultats</h3>
+                    <h4 style="bold">Ces informations seront saisies une fois le match effectué</h4>
+                </div>
+            </div></br>      
         </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Two -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://theoriginalwinger.com/wp-content/uploads/2012/06/portugal-v-spain-euro-20121.jpg" alt="">
-                </a>
+		
+		<div id="rang" style="display: none;">
+            <!-- Page classement -->
+        
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Mon classement
+                        <small>classement en fonction des points obtenus</small>
+                    </h1>
+                </div>
             </div>
-            <div class="col-md-5">
-                <h3>Espagne - Portugal</h3>
-                <h4>20/04/2016 - 21h05</h4>
-                <p>Descriptif du match</p>
-                <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
+            <!-- /.row -->
+        
+            <!-- tableau de classement -->
+                
+            <div class="container">          
+              <table class="table table-bordered" id="table_rang">
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th>Pseudo</th>
+                    <th>Total de points</th>
+                    <th>Match France - Allemagne</th>
+                    <th>Match Espagne - Portugal</th>
+                    <th>Match France - Espagne</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Lolilulz</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Profchen</td>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                  </tr>
+                  <tr style="background-color:#51D0EA">
+                    <td>2</td>
+                    <td>Benji</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>X</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Adrien</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td style="text-align:center;">/</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+        
+            <!-- table -->
+        
+            <hr>
+            <!-- /.row -->      
         </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Project Three -->
-        <div class="row">
-            <div class="col-md-7">
-                <a href="#">
-                    <img class="img-responsive" src="http://passions-fictions.com/wp-content/uploads/2014/09/FranceEspagne.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-5">
-                <h3>France - Espagne</h3>
-                <h4>23/04/2016</h4>
-                <p>Descriptif du match</p>
-                <a class="btn btn-primary" href="#">Parier maintenant<span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-		
-		<!-- page list des paris -->
-				
-				<!-- Page Heading -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h1 class="page-header">Mes paris
-							<small>paris effectués</small>
-						</h1>
-					</div>
-				</div>
-				<!-- /.row -->
-				
-				<!-- rappel du match parié-->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>France - Allemagne</h2>
-					</div>
-				</div>
-				<!-- row -->
-				
-				 <div class="row">
-					<div class="col-md-6">
-						<h3>Pari effectué</h3>
-						<h4 style="bold">Vainqueur : France</h4>
-						<p style="bold">Score : 2 - 0</p>
-						<p>Points obtenus : X points</p>
-					</div>
-					<div class="col-md-6">
-						<h3>Résultats</h3>
-						<h4 style="bold">Vainqueur : France</h4>
-						<p style="bold">Score : 4 - 1</p>
-					</div>
-				</div></br>
-		
-		<!-- /.row -->
-		
-			<!-- rappel du match parié-->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2>France - Espagne</h2>
-					</div>
-				</div>
-				<!-- row -->
-				
-				 <div class="row">
-					<div class="col-md-6">
-						<h3>Pari effectué</h3>
-						<h4 style="bold">Vainqueur : France</h4>
-						<p style="bold">Score : 3 - 1</p>
-						<p>Points obtenus : -</p>
-					</div>
-					<div class="col-md-6">
-						<h3>Résultats</h3>
-						<h4 style="bold">Ces informations seront saisies une fois le match effectué</h4>
-					</div>
-				</div></br>
-		
-		<!-- /.row -->
-		
-		<!-- Page classement -->
-		
-		<!-- Page Heading -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h1 class="page-header">Mon classement
-							<small>classement en fonction des points obtenus</small>
-						</h1>
-					</div>
-				</div>
-		<!-- /.row -->
-		
-		<!-- tableau de classement -->
-				
-		<div class="container">          
-		  <table class="table table-bordered">
-			<thead>
-			  <tr>
-				<th>Position</th>
-				<th>Pseudo</th>
-				<th>Total de points</th>
-				<th>Match France - Allemagne</th>
-				<th>Match Espagne - Portugal</th>
-				<th>Match France - Espagne</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <tr>
-				<td>1</td>
-				<td>Lolilulz</td>
-				<td>8</td>
-				<td>3</td>
-				<td>1</td>
-				<td>4</td>
-			  </tr>
-			  <tr>
-				<td>2</td>
-				<td>Profchen</td>
-				<td>6</td>
-				<td>2</td>
-				<td>2</td>
-				<td>2</td>
-			  </tr>
-			  <tr style="background-color:#51D0EA">
-				<td>2</td>
-				<td>Benji</td>
-				<td>6</td>
-				<td>4</td>
-				<td>2</td>
-				<td>X</td>
-			  </tr>
-			  <tr>
-				<td>3</td>
-				<td>Adrien</td>
-				<td>3</td>
-				<td>3</td>
-				<td style="text-align:center;">/</td>
-				<td>0</td>
-			  </tr>
-			</tbody>
-		  </table>
-		</div>
-		
-		<!-- table -->
-		
-        <hr>
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
 
         <hr>
 
@@ -292,12 +309,6 @@
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
 </body>
 

@@ -14,10 +14,27 @@ and open the template in the editor.
 	
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	
+	<script src="bootstrap/js/jquery.js"></script>
+	<script>
+		function changeForm(idForm) {
+			if (idForm == "cnx") {
+				$('#register').hide();
+				$('#cnx').show();
+			} else {
+				$('#register').show();
+				$('#cnx').hide();
+			}
+		}
+	</script>
+	<style>
+		.title {
+			text-align: center; font-size: 30px; color:grey;
+			cursor : pointer;
+		}
+	</style>
     <body>
-        <div style="text-align: center; font-size: 30px; color:grey">Déjà inscrit?</div>
-		<form class="form-horizontal">
+        <div class="title" onclick="changeForm('cnx')">Déjà inscrit?</div>
+		<form class="form-horizontal" id="cnx">
 			<fieldset>
 
 			<!-- Form Name -->
@@ -45,7 +62,7 @@ and open the template in the editor.
 			<div class="form-group">
 			  <label class="col-md-4 control-label" for="singlebutton"></label>
 			  <div class="col-md-4">
-				<button id="singlebutton" name="singlebutton" class="btn btn-primary">Valider</button>
+				<a href="./PageUser.html"><button id="singlebutton" name="singlebutton" class="btn btn-primary">Valider</button></a>
 			  </div>
 			</div>
 
@@ -53,8 +70,8 @@ and open the template in the editor.
 		</form></br></br>
 
     
-		<div style="text-align: center; font-size: 30px; color:grey">Pas encore inscrit? Créez un compte pour vous connecter</div></br>
-		<form class="form-horizontal">
+		<div class="title" onclick="changeForm('register')">Pas encore inscrit? Créez un compte pour vous connecter</div></br>
+		<form class="form-horizontal" style="display: none;" id="register">
 			<fieldset>
 
 			<!-- Form Name -->
