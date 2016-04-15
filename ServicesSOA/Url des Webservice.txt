@@ -1,0 +1,11 @@
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=survey&action=listing
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=survey&action=stats&idSurvey=1
+
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=user&action=listing
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=user&action=logout
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=user&action=login&login=USERLOGIN&password=USERPASSWORD
+
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=User&action=remove&idAdmin=2
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=User&action=modify&idAdmin=2&login=yolo&password=swag
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=User&action=register&login=testInscription&password=samarche
+http://127.0.0.1/AGILE/php/ControllerWS.php?ws=User&action=getall
