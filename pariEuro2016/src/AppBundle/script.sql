@@ -26,7 +26,7 @@ CREATE TABLE Matchs(
         ma_id     int (11) Auto_increment  NOT NULL ,
         ma_id_tm1 Int NOT NULL ,
         ma_id_tm2 Int NOT NULL ,
-        ma_date   Date NOT NULL ,
+        ma_date   DateTime NOT NULL ,
         ma_score1 Int ,
         ma_score2 Int ,
         PRIMARY KEY (ma_id )
