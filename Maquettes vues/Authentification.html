@@ -10,6 +10,27 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="bootstrapdt/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="bootstrapdt/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		 <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="bootstrap/css/1-col-portfolio.css" rel="stylesheet">
+    <!-- Datatable -->
+    <link rel="stylesheet" type="text/css" href="./datatables/dataTables.css">
+    <script type="text/javascript" charset="utf8" src="./datatables/dataTables.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <link href="bootstrapdt/css/bootstrap.min.css" rel="stylesheet" media="screen">
+   <link href="bootstrapdt/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     </head>
 	
 	<script src="bootstrap/js/bootstrap.js"></script>
@@ -122,20 +143,46 @@ and open the template in the editor.
 			  </div>
 			</div>
 
-			<!-- Text input-->
-			<div class="form-group">
-			  <label class="col-md-4 control-label" for="datenaissance">Date de naissance</label>  
-			  <div class="col-md-4">
-			  <input id="datenaissance" name="datenaissance" type="text" placeholder="" class="form-control input-md" required="">
-				
-			  </div>
-			</div>
+			<!-- datepicker-->
+				   <div class="container">
+                   <form action="" class="form-horizontal"  role="form">
+                      <fieldset>
+                           <div class="form-group" style="padding-right: 180px;">
+                               <label for="dtp_input1" class="col-md-4 control-label">Date de naissance</label>
+                               <div class="input-group date form_datetime col-md-5" data-date="2016-04-15" data-date-format="dd MM yyyy" data-link-field="dtp_input1">
+                                   <input class="form-control" size="16" type="text" value="" readonly>
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                               </div>
+                               <input type="hidden" id="dtp_input1" value="" /><br/>
+                           </div>
+                       </fieldset>
+                   </form>
+               </div>
+    
+               <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+               <script type="text/javascript" src="bootstrapdt/js/bootstrap.min.js"></script>
+              <script type="text/javascript" src="bootstrapdt/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+               <script type="text/javascript" src="bootstrapdt/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+               <script type="text/javascript">
+					
+                   $('.form_datetime').datetimepicker({
+						language:  'fr',
+						weekStart: 1,
+						todayBtn:  0,
+						autoclose: 1,
+						todayHighlight: 1,
+						startView: 2,
+						minView:2,
+						forceParse: 0,
+					});
+               </script>
 
-			<!-- Text input-->
+			<!-- Mail input-->
 			<div class="form-group">
-			  <label class="col-md-4 control-label" for="mail">Mail</label>  
+			  <label class="col-md-4 control-label" for="email">Mail</label>  
 			  <div class="col-md-4">
-			  <input id="mail" name="mail" type="text" placeholder="" class="form-control input-md" required="">
+			  <input id="mail" name="mail" type="email" placeholder="" class="form-control input-md" required="">
 				
 			  </div>
 			</div>
@@ -150,6 +197,6 @@ and open the template in the editor.
 
 			</fieldset>
 		</form>
-					
+		
 	</body>
 </html>
